@@ -73,7 +73,7 @@ Recuerde actualizar la variable size.
 */
 
 void insertMap(HashMap * map, char * key, void * value) {
-  int posicion = hash(char *key, newMap -> long capacity);
+  int posicion = long hash(char *key, newMap -> long capacity);
   
 
   

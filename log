@@ -52,3 +52,23 @@ hashmap.c:76:7: error: unused variable ‘posicion’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 b6beb41
+Thu 07 Sep 2023 07:41:14 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:76:18: error: expected expression before ‘long’
+   76 |   int posicion = long hash(char *key, newMap -> long capacity);
+      |                  ^~~~
+hashmap.c:80:10: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   80 |   return NULL;
+      |          ^~~~
+hashmap.c:75:6: note: declared here
+   75 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+hashmap.c:76:7: error: unused variable ‘posicion’ [-Werror=unused-variable]
+   76 |   int posicion = long hash(char *key, newMap -> long capacity);
+      |       ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b82a147
