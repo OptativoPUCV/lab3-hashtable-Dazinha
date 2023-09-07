@@ -76,7 +76,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   
   long position = hash(key,  map -> size);
 
-  if (map -> buckets[position] != NULL && key == NULL)
+  while (map -> buckets[position] != NULL && key == NULL)
   {
     position ++;
   }
