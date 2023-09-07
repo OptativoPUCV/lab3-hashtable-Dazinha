@@ -12,3 +12,15 @@ hashmap.c:75:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 0d962d7
+Thu 07 Sep 2023 07:37:55 PM UTC: 
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:80:10: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   80 |   return NULL;
+      |          ^~~~
+hashmap.c:75:6: note: declared here
+   75 | void insertMap(HashMap * map, char * key, void * value) {
+      |      ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+13ba5b5
