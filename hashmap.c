@@ -78,7 +78,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   while (map -> buckets[position] != NULL && key == NULL)
   {
-    position ++;
+    position = (position + 1) % map-> size;
   }
 
   map -> size += 1;
