@@ -71,13 +71,11 @@ No inserte claves repetidas.
 Recuerde que el arreglo es **circular**.
 Recuerde actualizar la variable size.
 */
-
+// insertMap(map,_strdup(words[i]),cont);
 void insertMap(HashMap * map, char * key, void * value) {
   
-  int posicion =  hash(char *key, newMap -> long capacity);
-
+  long posicion = hash(key,  map -> capacity);
   
-  return NULL;
 }
 
 
@@ -96,9 +94,9 @@ Recuerde que el arreglo es **circular**.
 */
 
 Pair * searchMap(HashMap * map,  char * key) {   
+  
 
-
-    return NULL;
+  return NULL;
 }
 
 /*

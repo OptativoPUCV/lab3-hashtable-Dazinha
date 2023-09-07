@@ -120,3 +120,14 @@ hashmap.c:77:7: error: unused variable ‘posicion’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 4dcd8cf
+Thu 07 Sep 2023 09:28:13 PM UTC: 
+ hashmap.c | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:77:8: error: unused variable ‘posicion’ [-Werror=unused-variable]
+   77 |   long posicion = hash(key,  map -> capacity);
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3b5174f
