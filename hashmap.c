@@ -74,7 +74,14 @@ Recuerde actualizar la variable size.
 // insertMap(map,_strdup(words[i]),cont);
 void insertMap(HashMap * map, char * key, void * value) {
   
-  long posicion = hash(key,  map -> capacity);
+  long posicion = hash(key,  map -> size);
+
+  if (map -> posicion != NULL && key == NULL)
+  {
+    map -> posicion -> next = posicion;
+  }
+
+  map -> size += 1;
   
 }
 
