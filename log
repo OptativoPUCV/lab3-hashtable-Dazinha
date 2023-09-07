@@ -144,3 +144,18 @@ hashmap.c:81:9: error: ‘HashMap’ {aka ‘struct HashMap’} has no member na
       |         ^~
 Compilation failed
 3c36416
+Thu 07 Sep 2023 09:57:48 PM UTC: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/string.h:33,
+                 from test.c:3:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:79:25: error: expected identifier before ‘(’ token
+   79 |   if (map -> current -> NULL && key == NULL)
+      |                         ^~~~
+In file included from test.c:4:
+hashmap.c:81:20: error: invalid type argument of ‘->’ (have ‘long int’)
+   81 |     map -> current -> next = current;
+      |                    ^~
+Compilation failed
+77d67fe
