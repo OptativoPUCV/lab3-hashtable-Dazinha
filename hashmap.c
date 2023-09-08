@@ -184,18 +184,46 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 /*
-5.- Implemente las funciones para recorrer la estructura: Pair * firstMap(HashMap * map) retorna el primer **Pair** válido del arreglo buckets. Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. Recuerde actualizar el índice.
+5.- Implemente las funciones para recorrer la estructura: Pair * firstMap(HashMap * map) retorna el primer **Pair** válido del arreglo buckets. 
+Recuerde actualizar el índice.
+Pair * createPair( char * key,  void * value) {
+    Pair * new = (Pair *)malloc(sizeof(Pair));
+    new->key = key;
+    new->value = value;
+    return new;
+}
 */
 
 Pair * firstMap(HashMap * map) {
-
+  if (map == NULL)
+  {
     return NULL;
+  }
+
+  long size = map -> size;
+
+  for(int i = 0 ; i < size ; i++)
+    {
+      //Pair *newPair = createPair(strdup(key), value);
+      Pair * newPair = map-> buckets[i];
+
+      if(newPair != NULL)
+      {
+        map -> current = i;    //long current; //indice del ultimo dato accedido
+        return newPair;
+      }
+      
+    }
+
+  
+  return NULL;
 }
 
+//Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. 
 
 Pair * nextMap(HashMap * map) {
 
-    return NULL;
+  return NULL;
 }
 
 
