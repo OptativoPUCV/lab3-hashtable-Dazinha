@@ -195,15 +195,14 @@ Pair * createPair( char * key,  void * value) {
 */
 
 Pair * firstMap(HashMap * map) {
-  if (map == NULL || map -> current == -1)
+  if (map == NULL)
   {
     return NULL;
   }
 
   long size = map -> size;
-  long position = map -> current + 1;
-  
-  for(long i = position ; i < size ; i++)
+
+  for(long i = 0 ; i < size ; i++)
     {
       //Pair *newPair = createPair(strdup(key), value);
       Pair * newPair = map-> buckets[i];
@@ -216,7 +215,7 @@ Pair * firstMap(HashMap * map) {
       
     }
 
-  map -> current = -1;
+  
   return NULL;
 }
 
