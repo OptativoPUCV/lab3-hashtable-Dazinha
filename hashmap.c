@@ -79,7 +79,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   }
 
   //Apicar función hash para obtener la posición
-  int position = hash(key,  map -> size);
+  int position = hash(key,  map -> capacity);
 
   //Si la casilla está ocupada, avanzar hasta una disponible
   while (map -> buckets[position] != NULL && map->buckets[position]->key != NULL)
