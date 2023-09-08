@@ -82,14 +82,15 @@ void insertMap(HashMap * map, char * key, void * value) {
   long position = hash(key,  map -> capacity);
 
   //Si la casilla está ocupada, avanzar hasta una disponible
-  while (map->buckets[position]->key != NULL)
+  while (map -> buckets[position] != NULL && map->buckets[position]->key != NULL)
   { 
-    
+    //llamar a funcion is_equal para evitar que sean iguales
     if (is_equal(map->buckets[position]->key, key)) 
     {
       return;
     }
-    position = (position + 1) % map-> capacity;
+
+    position = (position + 1);
   }
 
   Pair *newPair = createPair(strdup(key), value);
