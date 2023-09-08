@@ -220,6 +220,22 @@ Pair * firstMap(HashMap * map) {
 }
 
 //Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. 
+/*
+Pair * nextMap(HashMap * map)
+{
+  int condicion = map->capacity;
+  for(int i = map->current + 1 ; i < condicion ; i++)
+  {
+
+    if(map->buckets[i] != NULL && map->buckets[i]->key != NULL )
+    {
+      map->current = i;
+      return map->buckets[i];
+    }
+  }
+  return NULL;
+}
+*/
 
 Pair * nextMap(HashMap * map) {
   if (map == NULL || map -> current == -1)
@@ -227,12 +243,12 @@ Pair * nextMap(HashMap * map) {
     return NULL;
   }
 
-  long size = map -> size;
+  long capacity = map -> capacity;
 
-  for(long i = map -> current + 1; i < size ; i++)
+  for(long i = map -> current + 1; i < capacity ; i++)
     {
       //Pair *newPair = createPair(strdup(key), value);
-      Pair * newPair = map-> buckets[i];
+      Pair *newPair = map-> buckets[i];
 
       if(newPair != NULL && newPair -> key != NULL)
       {
