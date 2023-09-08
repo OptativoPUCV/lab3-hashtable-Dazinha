@@ -82,10 +82,9 @@ void insertMap(HashMap * map, char * key, void * value) {
   int position = hash(key,  map -> size);
 
   //Si la casilla está ocupada, avanzar hasta una disponible
-  while (map -> buckets[position] != NULL && key == NULL)
+  while (map -> buckets[position] != NULL && map->buckets[position]->key != NULL)
   { 
     if (is_equal(map->buckets[position]->key, key)) {
-            // La clave ya existe, no insertar duplicados
       return;
     }
     position = (position + 1) % map-> size;
