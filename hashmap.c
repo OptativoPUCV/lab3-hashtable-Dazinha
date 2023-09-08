@@ -140,7 +140,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   //b
   while (map -> buckets[position] != NULL)
   {
-    if (is_equal(map->buckets[position]->key, key) && map->buckets[position]->key != NULL) 
+    if (is_equal(map->buckets[position]->key, key)) 
     {
       map -> current = position;
       return map -> buckets[position];
