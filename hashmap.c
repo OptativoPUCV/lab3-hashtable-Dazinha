@@ -94,6 +94,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     position = (position + 1) % (capacity);
   }
+
   
   //crear el nuevo par
   Pair *newPair = createPair(strdup(key), value);
@@ -139,7 +140,12 @@ Pair * searchMap(HashMap * map,  char * key) {
   //b
   while (map -> buckets[position] != NULL)
   {
-    map -> current = position;
+    if (is_equal(map->buckets[position]->key, key)) 
+    {
+      map -> current = position;
+      return map -> buckets[position];
+    }
+      
     position = (position + 1) % (capacity);
   }
   
