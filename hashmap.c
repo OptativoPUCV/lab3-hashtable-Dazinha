@@ -79,15 +79,17 @@ void insertMap(HashMap * map, char * key, void * value) {
   }
 
   //Apicar función hash para obtener la posición
-  int position = hash(key,  map -> capacity);
+  long position = hash(key,  map -> capacity);
 
   //Si la casilla está ocupada, avanzar hasta una disponible
   while (map -> buckets[position] != NULL && map->buckets[position]->key != NULL)
   { 
-    if (is_equal(map->buckets[position]->key, key)) {
+    
+    if (is_equal(map->buckets[position]->key, key)) 
+    {
       return;
     }
-    position = (position + 1) % map-> size;
+    position = (position + 1) % map-> capacity;
   }
 
   Pair *newPair = createPair(strdup(key), value);
