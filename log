@@ -230,3 +230,14 @@ Fri 08 Sep 2023 06:56:18 PM UTC:
  tests:  4|5
 total_score: 20/70
 dd4bc16
+Fri 08 Sep 2023 07:01:13 PM UTC: 
+ hashmap.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:132:8: error: unused variable ‘position’ [-Werror=unused-variable]
+  132 |   long position = hash(key, capacity);
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4eab997

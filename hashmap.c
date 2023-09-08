@@ -78,8 +78,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     return;
   }
 
+  long capacity = map -> capacity;
+  
   //Apicar función hash para obtener la posición
-  long position = hash(key,  map -> capacity);
+  long position = hash(key, capacity);
 
   //Si la casilla está ocupada, avanzar hasta una disponible
   while (map -> buckets[position] != NULL && map->buckets[position]->key != NULL)
@@ -90,9 +92,10 @@ void insertMap(HashMap * map, char * key, void * value) {
       return;
     }
 
-    position = (position + 1);
+    position = (position + 1) % map-> capacity;
   }
-
+  
+  //crear el nuevo par
   Pair *newPair = createPair(strdup(key), value);
 
   if (newPair == NULL)
@@ -100,6 +103,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     return;
   }
 
+  //actualizar el par
   map -> buckets[position] = newPair;
   map -> size ++;
   map -> current = position;
@@ -119,8 +123,14 @@ c - Si llega a una casilla nula, retorne NULL inmediatamente (no siga avanzando,
 Recuerde actualizar el índice current a la posición encontrada.
 Recuerde que el arreglo es **circular**.
 */
+//long hash( char * key, long capacity)
+//is_equal(void* key1, void* key2)
 
 Pair * searchMap(HashMap * map,  char * key) {   
+  long capacity = map -> capacity;
+  
+  long position = hash(key, capacity);
+
   
 
   return NULL;
