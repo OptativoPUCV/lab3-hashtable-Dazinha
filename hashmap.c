@@ -99,7 +99,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   map -> buckets[position] = newPair;
   map -> size ++;
-  
+  map -> current = position;
 }
 
 
