@@ -201,8 +201,9 @@ Pair * firstMap(HashMap * map) {
   }
 
   long size = map -> size;
-
-  for(long i = 0 ; i < size ; i++)
+  long position = map -> current;
+  
+  for(long i = position ; i < size ; i++)
     {
       //Pair *newPair = createPair(strdup(key), value);
       Pair * newPair = map-> buckets[i];
@@ -211,7 +212,6 @@ Pair * firstMap(HashMap * map) {
       {
         map -> current = i;    //long current; //indice del ultimo dato accedido
         return newPair;
-
       }
       
     }
