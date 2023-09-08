@@ -207,13 +207,10 @@ Pair * firstMap(HashMap * map) {
       //Pair *newPair = createPair(strdup(key), value);
       Pair * newPair = map-> buckets[i];
 
-      if(newPair != NULL)
+      if(newPair != NULL && newPair -> key != NULL)
       {
-        if (newPair -> key != NULL)
-        {
-          map -> current = i;    //long current; //indice del ultimo dato accedido
-          return newPair;
-        }
+        map -> current = i;    //long current; //indice del ultimo dato accedido
+        return newPair;
 
       }
       
