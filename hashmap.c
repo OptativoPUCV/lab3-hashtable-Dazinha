@@ -202,7 +202,7 @@ Pair * firstMap(HashMap * map) {
 
   long size = map -> size;
 
-  for(int i = 0 ; i < size ; i++)
+  for(long i = 0 ; i < size ; i++)
     {
       //Pair *newPair = createPair(strdup(key), value);
       Pair * newPair = map-> buckets[i];
