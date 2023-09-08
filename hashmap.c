@@ -220,22 +220,6 @@ Pair * firstMap(HashMap * map) {
 }
 
 //Pair * nextMap(HashMap * map) retorna el siguiente **Pair** del arreglo buckets a partir índice current. 
-/*
-Pair * nextMap(HashMap * map)
-{
-  int condicion = map->capacity;
-  for(int i = map->current + 1 ; i < condicion ; i++)
-  {
-
-    if(map->buckets[i] != NULL && map->buckets[i]->key != NULL )
-    {
-      map->current = i;
-      return map->buckets[i];
-    }
-  }
-  return NULL;
-}
-*/
 
 Pair * nextMap(HashMap * map) {
   if (map == NULL || map -> current == -1)
@@ -276,12 +260,46 @@ c - Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
 d - Inicialice size a 0.
 
 e - Inserte los elementos del arreglo *old_buckets* en el mapa (use la función insertMap que ya implementó).
+
 */
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+  enlarge_called = 1; //no borrar (testing purposes)
 
+  //a)
+  //Pair *newPair = map-> buckets[i];
+  Pair **old_buckets = map -> buckets;
 
+  //b)
+  long capacity = map -> capacity;
+  long doubleCapacity = map -> capacity * 2;
+
+  //c) Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
+  //newMap -> buckets = (Pair**) calloc(sizeof(Pair), capacity);
+  map -> buckets = (Pair ** ) malloc(sizeof(doubleCapacity));
+  
+  if (map -> buckets == NULL)
+  {
+    return;
+  }
+
+  //d) 
+  map -> size = 0;
+  
+  for (long i = 0; i < capacity; i++) 
+  {
+    Pair *newPair = old_buckets[i];
+    
+    if (newPair != NULL && newPair->key != NULL) 
+    {
+      insertMap(map, newPair -> key, newPair -> value);
+    }
+    
+  }
+
+  free(old_buckets);
+
+  map->capacity = doubleCapacity;
 }
 
 
