@@ -278,3 +278,9 @@ hashmap.c:162:38: note: previous definition of ‘key’ with type ‘char *’
       |                               ~~~~~~~^~~
 Compilation failed
 5400fdf
+Fri 08 Sep 2023 07:54:55 PM UTC: 
+ hashmap.c | 2 --
+ 1 file changed, 2 deletions(-)
+ tests:  11|2
+total_score: 50/70
+6329efe

@@ -168,9 +168,7 @@ void eraseMap(HashMap * map,  char * key) {
 
   long capacity = map -> capacity;  
   long position = hash(key, capacity);
-  char *key = map -> buckets[position] -> key;
   
-
   while( map -> buckets[position] != NULL)
   {
       if (map -> buckets[position] -> key != NULL && is_equal(map -> buckets[position] -> key, key))
