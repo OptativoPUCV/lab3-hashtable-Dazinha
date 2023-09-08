@@ -209,8 +209,12 @@ Pair * firstMap(HashMap * map) {
 
       if(newPair != NULL)
       {
-        map -> current = i;    //long current; //indice del ultimo dato accedido
-        return newPair;
+        if (newPair -> key != NULL)
+        {
+          map -> current = i;    //long current; //indice del ultimo dato accedido
+          return newPair;
+        }
+
       }
       
     }
