@@ -92,7 +92,7 @@ void insertMap(HashMap * map, char * key, void * value) {
       return;
     }
 
-    position = (position + 1) % map-> capacity;
+    position = (position + 1) % (capacity);
   }
   
   //crear el nuevo par
@@ -127,10 +127,22 @@ Recuerde que el arreglo es **circular**.
 //is_equal(void* key1, void* key2)
 
 Pair * searchMap(HashMap * map,  char * key) {   
-  long capacity = map -> capacity;
-  
+  if (map == NULL || key == NULL)
+  {
+    return NULL;
+  }
+
+  //a
+  long capacity = map -> capacity;  
   long position = hash(key, capacity);
 
+  //b
+  while (map -> buckets[position] != NULL)
+  {
+    map -> current = position;
+    position = (position + 1) % (capacity);
+  }
+  
   
 
   return NULL;

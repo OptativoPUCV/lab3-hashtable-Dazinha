@@ -241,3 +241,9 @@ hashmap.c:132:8: error: unused variable ‘position’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 4eab997
+Fri 08 Sep 2023 07:11:55 PM UTC: 
+ hashmap.c | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+ tests:  5|4
+total_score: 30/70
+17f1238
