@@ -350,3 +350,18 @@ Fri 08 Sep 2023 08:51:05 PM UTC:
  tests:  14|2
 total_score: 50/70
 914244b
+Fri 08 Sep 2023 08:57:04 PM UTC: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:232:40: error: statement with no effect [-Werror=unused-value]
+  232 |   for(long i = map -> current + 1; ; i < size ; i++)
+      |                                      ~~^~~~~~
+hashmap.c:232:46: error: expected ‘)’ before ‘;’ token
+  232 |   for(long i = map -> current + 1; ; i < size ; i++)
+      |      ~                                       ^~
+      |                                              )
+cc1: all warnings being treated as errors
+Compilation failed
+1d6e081
