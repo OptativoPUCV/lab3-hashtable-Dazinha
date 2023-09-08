@@ -201,7 +201,7 @@ Pair * firstMap(HashMap * map) {
   }
 
   long size = map -> size;
-  long position = map -> current;
+  long position = map -> current + 1;
   
   for(long i = position ; i < size ; i++)
     {
