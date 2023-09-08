@@ -73,15 +73,29 @@ Recuerde actualizar la variable size.
 */
 // insertMap(map,_strdup(words[i]),cont);
 void insertMap(HashMap * map, char * key, void * value) {
-  
-  long position = hash(key,  map -> size);
-
-  while (map -> buckets[position] != NULL && key == NULL)
+  if (key == NULL || map == NULL)
   {
+    return;
+  }
+
+  //Apicar función hash para obtener la posición
+  int position = hash(key,  map -> size);
+
+  //Si la casilla está ocupada, avanzar hasta una disponible
+  while (map -> buckets[position] != NULL && key == NULL)
+  { 
     position = (position + 1) % map-> size;
   }
 
-  map -> size += 1;
+  Pair *newPair = createPair(key, value);
+
+  if (newPair == NULL)
+  {
+    return;
+  }
+
+  map -> buckets[position] = newPair;
+  map -> size ++;
   
 }
 
