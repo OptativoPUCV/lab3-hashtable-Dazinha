@@ -229,7 +229,7 @@ Pair * nextMap(HashMap * map) {
 
   long size = map -> size;
 
-  for(long i = map -> current + 1 ; i < size ; i++)
+  for(long i = map -> current ; i < size ; i++)
     {
       //Pair *newPair = createPair(strdup(key), value);
       Pair * newPair = map-> buckets[i];
