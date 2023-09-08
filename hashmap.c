@@ -228,7 +228,7 @@ Pair * nextMap(HashMap * map) {
   }
 
   long size = map -> size;
-  long current = map -> current;
+  long current = map -> current + 1;
 
   for(long i = current ; i < size ; i++)
     {
@@ -243,7 +243,7 @@ Pair * nextMap(HashMap * map) {
       
     }
 
-  
+  map -> current = -1;
   return NULL;
 }
 
