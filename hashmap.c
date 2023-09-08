@@ -90,7 +90,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     position = (position + 1) % map-> size;
   }
 
-  Pair *newPair = createPair(key, value);
+  Pair *newPair = createPair(strdup(key), value);
 
   if (newPair == NULL)
   {
