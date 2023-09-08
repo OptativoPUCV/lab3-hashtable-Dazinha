@@ -216,7 +216,7 @@ Pair * firstMap(HashMap * map) {
       
     }
 
-  
+  map -> current = -1;
   return NULL;
 }
 
