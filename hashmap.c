@@ -195,7 +195,7 @@ Pair * createPair( char * key,  void * value) {
 */
 
 Pair * firstMap(HashMap * map) {
-  if (map == NULL)
+  if (map == NULL || map -> current == -1)
   {
     return NULL;
   }
