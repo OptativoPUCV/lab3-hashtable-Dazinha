@@ -260,6 +260,30 @@ c - Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
 d - Inicialice size a 0.
 
 e - Inserte los elementos del arreglo *old_buckets* en el mapa (use la función insertMap que ya implementó).
+void enlarge(HashMap * map) {
+  enlarge_called = 1; //no borrar (testing purposes)
+
+  map->capacity = 2;
+  Pair  newBuckets = (Pair )malloc(sizeof(Pair) * map->capacity);
+  if (newBuckets == NULL) {
+       return;
+  }
+
+  for (int i = 0; i < map->capacity / 2; i++) {
+      if (map->buckets[i] != NULL) {
+          long cont = hash(map->buckets[i]->key,map->capacity) ;
+
+          while (newBuckets[cont] != NULL) {
+            cont = (cont + 1) % map->capacity;
+          }
+          newBuckets[cont] = map->buckets[i];
+      }
+    }
+
+    free(map->buckets);
+    map->buckets = newBuckets;
+}
+
 
 */
 
@@ -276,31 +300,33 @@ void enlarge(HashMap * map) {
 
   //c) Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
   //newMap -> buckets = (Pair**) calloc(sizeof(Pair), capacity);
-  map -> buckets = (Pair ** ) malloc(sizeof(doubleCapacity));
+  Pair** newBuckets = (Pair**)malloc(sizeof(Pair) * map -> capacity);
   
   if (map -> buckets == NULL)
   {
     return;
   }
-
-  //d) 
-  map -> size = 0;
   
-  for (long i = 0; i < capacity; i++) 
+  for (long i = 0; i < capacity / 2 ; i++) 
   {
     Pair *newPair = old_buckets[i];
     
-    if (newPair != NULL && newPair->key != NULL) 
+    if (map -> buckets[i] != NULL) 
     {
-      insertMap(map, newPair -> key, newPair -> value);
+      long count = hash(map->buckets[i]->key,map->capacity) ;
+
+      while (newBuckets[count] != NULL) 
+      {
+      count = (count + 1) % map->capacity;
+      }
+      
+      newBuckets[count] = map->buckets[i];
     }
     
   }
 
-  free(old_buckets);
+  free(map -> buckets);
 
-  map->capacity = doubleCapacity;
+  map -> buckets = newBuckets;
 }
-
-
 

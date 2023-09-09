@@ -394,3 +394,17 @@ Fri 08 Sep 2023 11:45:42 PM UTC:
  1 file changed, 33 insertions(+), 16 deletions(-)
  tests:  0|0
 343f382
+Sat 09 Sep 2023 12:09:05 AM UTC: 
+ hashmap.c | 46 ++++++++++++++++++++++++++++++++++++----------
+ 1 file changed, 36 insertions(+), 10 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:312:11: error: unused variable ‘newPair’ [-Werror=unused-variable]
+  312 |     Pair *newPair = old_buckets[i];
+      |           ^~~~~~~
+hashmap.c:299:8: error: unused variable ‘doubleCapacity’ [-Werror=unused-variable]
+  299 |   long doubleCapacity = map -> capacity * 2;
+      |        ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+131987e
