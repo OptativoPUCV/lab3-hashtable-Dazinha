@@ -408,3 +408,17 @@ hashmap.c:299:8: error: unused variable ‘doubleCapacity’ [-Werror=unused-var
 cc1: all warnings being treated as errors
 Compilation failed
 131987e
+Sat 09 Sep 2023 12:10:06 AM UTC: 
+ hashmap.c | 2 --
+ 1 file changed, 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:299:8: error: unused variable ‘doubleCapacity’ [-Werror=unused-variable]
+  299 |   long doubleCapacity = map -> capacity * 2;
+      |        ^~~~~~~~~~~~~~
+hashmap.c:295:10: error: unused variable ‘old_buckets’ [-Werror=unused-variable]
+  295 |   Pair **old_buckets = map -> buckets;
+      |          ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+13dcadf

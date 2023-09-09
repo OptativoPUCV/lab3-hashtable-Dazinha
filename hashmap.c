@@ -308,9 +308,7 @@ void enlarge(HashMap * map) {
   }
   
   for (long i = 0; i < capacity / 2 ; i++) 
-  {
-    Pair *newPair = old_buckets[i];
-    
+  {    
     if (map -> buckets[i] != NULL) 
     {
       long count = hash(map->buckets[i]->key,map->capacity) ;
