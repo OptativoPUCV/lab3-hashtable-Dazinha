@@ -306,7 +306,7 @@ void enlarge(HashMap * map) {
   {    
     if (map -> buckets[i] != NULL) 
     {
-      long count = hash(map->buckets[i]->key,map->capacity) ;
+      long count = hash(map->buckets[i] -> key, map -> doubleCapacity) ;
 
       while (newBuckets[count] != NULL) 
       {

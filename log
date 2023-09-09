@@ -433,3 +433,17 @@ hashmap.c:294:8: error: unused variable ‘doubleCapacity’ [-Werror=unused-var
 cc1: all warnings being treated as errors
 Compilation failed
 af53f10
+Sat 09 Sep 2023 12:11:15 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:309:53: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘doubleCapacity’
+  309 |       long count = hash(map->buckets[i] -> key, map -> doubleCapacity) ;
+      |                                                     ^~
+hashmap.c:294:8: error: unused variable ‘doubleCapacity’ [-Werror=unused-variable]
+  294 |   long doubleCapacity = map -> capacity * 2;
+      |        ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+3cde284
