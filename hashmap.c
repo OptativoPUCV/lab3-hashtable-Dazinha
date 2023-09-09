@@ -290,11 +290,6 @@ void enlarge(HashMap * map) {
 void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
 
-  //a)
-  //Pair *newPair = map-> buckets[i];
-  Pair **old_buckets = map -> buckets;
-
-  //b)
   long capacity = map -> capacity;
   long doubleCapacity = map -> capacity * 2;
 

@@ -422,3 +422,14 @@ hashmap.c:295:10: error: unused variable ‘old_buckets’ [-Werror=unused-varia
 cc1: all warnings being treated as errors
 Compilation failed
 13dcadf
+Sat 09 Sep 2023 12:10:34 AM UTC: 
+ hashmap.c | 5 -----
+ 1 file changed, 5 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:294:8: error: unused variable ‘doubleCapacity’ [-Werror=unused-variable]
+  294 |   long doubleCapacity = map -> capacity * 2;
+      |        ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+af53f10
