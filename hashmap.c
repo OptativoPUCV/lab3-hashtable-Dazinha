@@ -291,7 +291,6 @@ void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
 
   long capacity = map -> capacity;
-  long doubleCapacity = map -> capacity * 2;
 
   //c) Asigne a map->buckets un nuevo arreglo con la nueva capacidad.
   //newMap -> buckets = (Pair**) calloc(sizeof(Pair), capacity);
