@@ -301,7 +301,7 @@ void enlarge(HashMap * map) {
     return;
   }
   
-  for (long i = 0; i < capacity / 2 ; i++) 
+  for (long i = 0; i < map -> capacity / 2 ; i++) 
   {    
     if (map -> buckets[i] != NULL) 
     {

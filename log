@@ -492,3 +492,9 @@ hashmap.c:304:24: error: ‘capacity’ undeclared (first use in this function)
 hashmap.c:304:24: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 b7d622a
+Sat 09 Sep 2023 12:15:02 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|0
+total_score: 70/70
+3d77564
