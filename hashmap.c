@@ -310,7 +310,7 @@ void enlarge(HashMap * map) {
 
       while (newBuckets[count] != NULL) 
       {
-      count = (count + 1) % map->capacity;
+      count = (count + 1) % map->doubleCapacity;
       }
       
       newBuckets[count] = map->buckets[i];
